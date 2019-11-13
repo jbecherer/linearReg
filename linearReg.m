@@ -1,4 +1,4 @@
-function [lg, std_lg, con_lg, r, con_r] = linearReg(x,y)
+function [lg, con_lg, r, con_r] = linearReg(x,y)
 %% [lg] = linearReg(x,y)
 %
 %  This function calculates the coefficients of a simple inear regression 
@@ -6,17 +6,13 @@ function [lg, std_lg, con_lg, r, con_r] = linearReg(x,y)
 %
 %  y = lg(1)*x + lg(2);
 %
-%  same result as polyfit(x,y,1)
 %
-%  This is 10x faster then polyfit 
-%  but exactly same result !
+%  OUTPUT
+%     lg       :  linear regrssion coeffs  y = lg(1)*x + lg(2)
+%     con_lg   :  95% convidence intervals on coeffs
+%     r        :  correlation coeff
+%     con_r    :  convidence interval for r
 %
-%  std_lg gives standart diviation on slope std_lg(1) and
-%  off_set  std_lg(2)
-%
-%  con_lg gives the confedence intervals
-%
-%  r is linear correlation coeff
 %
 %   created by: 
 %        Johannes Becherer
@@ -52,7 +48,7 @@ function [lg, std_lg, con_lg, r, con_r] = linearReg(x,y)
       
     
 
-  if nargout > 4
+  if nargout > 3
       [R, ~, rl, ru] = corrcoef(x,y);
 
       r= R(1,2);

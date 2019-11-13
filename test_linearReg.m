@@ -20,7 +20,7 @@ toc
 
 % linear regression;
 tic
-[lg, std_lg, con_lg, r, con_r] = linearReg(x,y)
+[lg,  con_lg, r, con_r] = linearReg(x,y)
 toc
 
 % correlation
