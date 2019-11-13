@@ -8,7 +8,7 @@ function [lg] = linearReg(x,y)
 %
 %  same result as polyfit(x,y,1)
 %
-%  This is 10x faster then polyval 
+%  This is 10x faster then polyfit 
 %  but exactly same result !
 %
 %
